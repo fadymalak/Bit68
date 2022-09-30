@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+
+  db:
+    image: postgres
+    environment:
+      - "POSTGRES_PASSWORD=adminadmin"
+      - "DB_HOST=host.docker.internal"
+      - "POSTGRES_USER=admin"
+      - "PGDATA=/var/lib/postgresql/data/pgdata"
+    ports:
+      - "5432:5432"
+    volumes:
+      - "bit68Volume:/var/lib/postgresql/data/pgdata"
+
+
+volumes:
+ bit68Volume:  
+    external: true
+    name: bit68Volume

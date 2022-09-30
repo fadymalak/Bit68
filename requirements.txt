@@ -1,0 +1,5 @@
+django
+djangorestframework
+django-fitler
+psycopg2-binary
+pytest-django

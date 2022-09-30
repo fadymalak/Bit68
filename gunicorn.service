@@ -1,0 +1,12 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/root/backend
+ExecStart=gunicorn --access-logfile - --workers 2 --bind unix:/root/backend/BShop.sock BShop.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
